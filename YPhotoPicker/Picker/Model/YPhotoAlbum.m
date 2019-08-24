@@ -10,9 +10,4 @@
 
 @implementation YPhotoAlbum
 
-- (NSString *)description
-{
-    return [NSString stringWithFormat:@"%@ -- %td", self.title, self.assets.count];
-}
-
 @end

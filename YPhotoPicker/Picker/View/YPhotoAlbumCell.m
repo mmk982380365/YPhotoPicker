@@ -93,7 +93,7 @@
 - (void)setAlbum:(YPhotoAlbum *)album {
     if (_album != album) {
         _album = album;
-        self.nameLabel.text = [NSString stringWithFormat:@"%@ (%td)", album.title, album.assets.count];
+        self.nameLabel.text = [NSString stringWithFormat:@"%@ (%ld)", album.title, (long)album.assets.count];
         [YPhotoPickerManager cancelLoadImage:self.lastID];
         CGFloat height = 48 * 3;
         CGFloat width = height * 16.0 / 9.0;
