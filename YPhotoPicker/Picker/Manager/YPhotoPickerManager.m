@@ -38,7 +38,9 @@
         case PHAuthorizationStatusNotDetermined:
         {
             [PHPhotoLibrary requestAuthorization:^(PHAuthorizationStatus status) {
-                block ? block(status == PHAuthorizationStatusAuthorized) : nil;
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    block ? block(status == PHAuthorizationStatusAuthorized) : nil;
+                });
             }];
         }
             break;

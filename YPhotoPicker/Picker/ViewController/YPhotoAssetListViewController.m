@@ -155,7 +155,7 @@
                 asset.isSelected = YES;
             } else {
                 //show alert
-                NSString *hint = [NSString stringWithFormat:@"您最多可以选择%d张图片。", (int)self.navigationController.maxCount];
+                NSString *hint = [NSString stringWithFormat:@"您最多可以选择%ld张图片。", self.navigationController.maxCount];
                 [self showHint:hint];
             }
         }

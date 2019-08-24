@@ -200,7 +200,7 @@
                 asset.isSelected = YES;
             } else {
                 //show alert
-                NSString *hint = [NSString stringWithFormat:@"您最多可以选择%d张图片。", (int)self.navigationController.maxCount];
+                NSString *hint = [NSString stringWithFormat:@"您最多可以选择%ld张图片。", self.navigationController.maxCount];
                 [self showHint:hint];
             }
         }
@@ -406,7 +406,6 @@
     self.selectedIndex = page;
     YPhotoAsset *asset = self.album.assets[self.selectedIndex];
     self.topView.selectBtn.selected = asset.isSelected;
-//    NSLog(@"isDragging=%d isTracking=%d isDecelerating=%d", scrollView.isDragging, scrollView.isTracking, scrollView.isDecelerating);
     if (!scrollView.isDragging && !scrollView.isTracking && !scrollView.isDecelerating) {
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.00 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self scrollViewDidEndDecelerating:scrollView];
