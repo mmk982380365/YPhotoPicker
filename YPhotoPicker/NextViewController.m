@@ -23,7 +23,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    NSLog(@"%ld", self.type);
+    NSLog(@"%td", self.type);
 }
 
 - (IBAction)showPicker:(id)sender {

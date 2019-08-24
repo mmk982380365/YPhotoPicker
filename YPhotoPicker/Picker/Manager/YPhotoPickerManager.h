@@ -49,6 +49,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (NSString *)videoPathWithAsset:(YPhotoAsset *)asset;
 
++ (UIImage * _Nullable)imageNamedFromBundle:(NSString *)imageNamed;
+
 @end
 
 NS_ASSUME_NONNULL_END

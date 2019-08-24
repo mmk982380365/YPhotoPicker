@@ -103,7 +103,7 @@ YPhotoPickerControllerInfoKey const YPhotoPickerControllerImageOrientation = @"Y
         
         [self.hud setLabelText:@"正在导入项目"];
         
-        [self.hud setLabelDetailText:[NSString stringWithFormat:@"%ld/%ld %.1f%%", self.currentIndex + 1, self.totalVideoIndex, self.currentIndex * (1.0/ self.totalVideoIndex) * 100]];
+        [self.hud setLabelDetailText:[NSString stringWithFormat:@"%td/%td %.1f%%", self.currentIndex + 1, self.totalVideoIndex, self.currentIndex * (1.0/ self.totalVideoIndex) * 100]];
         
     });
 }
@@ -124,7 +124,7 @@ YPhotoPickerControllerInfoKey const YPhotoPickerControllerImageOrientation = @"Y
         if (self.currentExportSession) {
             CGFloat progress = self.currentExportSession.progress / self.totalVideoIndex + self.currentIndex * (1.0/ self.totalVideoIndex);
             self.hud.progress = progress;
-            [self.hud setLabelDetailText:[NSString stringWithFormat:@"%ld/%ld %.1f%%", self.currentIndex + 1, self.totalVideoIndex, progress * 100]];
+            [self.hud setLabelDetailText:[NSString stringWithFormat:@"%td/%td %.1f%%", self.currentIndex + 1, self.totalVideoIndex, progress * 100]];
         }
     });
     dispatch_resume(timer);

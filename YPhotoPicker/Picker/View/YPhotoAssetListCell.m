@@ -41,10 +41,10 @@
         self.imageView.translatesAutoresizingMaskIntoConstraints = NO;
         
         self.selectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.selectBtn setImage:[UIImage imageNamed:@"picker_unselect"] forState:UIControlStateNormal];
-        [self.selectBtn setImage:[UIImage imageNamed:@"picker_unselect"] forState:UIControlStateNormal | UIControlStateHighlighted];
-        [self.selectBtn setImage:[UIImage imageNamed:@"picker_select"] forState:UIControlStateSelected];
-        [self.selectBtn setImage:[UIImage imageNamed:@"picker_select"] forState:UIControlStateSelected | UIControlStateHighlighted];
+        [self.selectBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_unselect"] forState:UIControlStateNormal];
+        [self.selectBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_unselect"] forState:UIControlStateNormal | UIControlStateHighlighted];
+        [self.selectBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_select"] forState:UIControlStateSelected];
+        [self.selectBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_select"] forState:UIControlStateSelected | UIControlStateHighlighted];
         [self.selectBtn addTarget:self action:@selector(selectAct:) forControlEvents:UIControlEventTouchUpInside];
         self.selectBtn.contentEdgeInsets = UIEdgeInsetsMake(6, 6, 6, 6);
         [self.contentView addSubview:self.selectBtn];

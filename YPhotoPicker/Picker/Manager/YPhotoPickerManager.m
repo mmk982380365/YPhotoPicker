@@ -314,4 +314,16 @@
     return outStr;
 }
 
++ (UIImage *)imageNamedFromBundle:(NSString *)imageNamed {
+    UIImage *image = nil;
+    image = [UIImage imageNamed:imageNamed];
+    if (!image) {
+        NSBundle *currentBundle = [NSBundle bundleForClass:[self class]];
+        NSString *bundlePath = [currentBundle.resourcePath stringByAppendingPathComponent:@"YPhotoPicker.bundle"];
+        NSBundle *resourceBundle = [NSBundle bundleWithPath:bundlePath];
+        image = [UIImage imageNamed:imageNamed inBundle:resourceBundle compatibleWithTraitCollection:nil];
+    }
+    return image;
+}
+
 @end

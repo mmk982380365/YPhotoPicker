@@ -23,7 +23,7 @@
         self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.8];
         
         self.leftBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.leftBtn setImage:[UIImage imageNamed:@"picker_back"] forState:UIControlStateNormal];
+        [self.leftBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_back"] forState:UIControlStateNormal];
         [self.leftBtn setTitle:@"返回" forState:UIControlStateNormal];
 //        [self.leftBtn addTarget:self action:@selector(leftBtnAct:) forControlEvents:UIControlEventTouchUpInside];
         self.leftBtn.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, -5);
@@ -33,10 +33,10 @@
         
         
         self.selectBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.selectBtn setImage:[UIImage imageNamed:@"picker_unselect"] forState:UIControlStateNormal];
-        [self.selectBtn setImage:[UIImage imageNamed:@"picker_unselect"] forState:UIControlStateNormal | UIControlStateHighlighted];
-        [self.selectBtn setImage:[UIImage imageNamed:@"picker_select"] forState:UIControlStateSelected];
-        [self.selectBtn setImage:[UIImage imageNamed:@"picker_select"] forState:UIControlStateSelected | UIControlStateHighlighted];
+        [self.selectBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_unselect"] forState:UIControlStateNormal];
+        [self.selectBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_unselect"] forState:UIControlStateNormal | UIControlStateHighlighted];
+        [self.selectBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_select"] forState:UIControlStateSelected];
+        [self.selectBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_select"] forState:UIControlStateSelected | UIControlStateHighlighted];
 //        [self.selectBtn addTarget:self action:@selector(selectBtnAct:) forControlEvents:UIControlEventTouchUpInside];
         self.selectBtn.contentEdgeInsets = UIEdgeInsetsMake(10, 10, 10, 10);
         [self addSubview:self.selectBtn];

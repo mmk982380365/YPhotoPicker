@@ -123,11 +123,11 @@
 - (void)prepareForPlay {
     if (!self.playBtn) {
         self.playBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        [self.playBtn setImage:[UIImage imageNamed:@"picker_play"] forState:UIControlStateNormal];
-        [self.playBtn setImage:[UIImage imageNamed:@"picker_play"] forState:UIControlStateNormal | UIControlStateHighlighted];
-        [self.playBtn setImage:[UIImage imageNamed:@"picker_pause"] forState:UIControlStateSelected];
-        [self.playBtn setImage:[UIImage imageNamed:@"picker_pause"] forState:UIControlStateSelected | UIControlStateHighlighted];
-        [self.playBtn setImage:[UIImage imageNamed:@"picker_unselect"] forState:UIControlStateDisabled];
+        [self.playBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_play"] forState:UIControlStateNormal];
+        [self.playBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_play"] forState:UIControlStateNormal | UIControlStateHighlighted];
+        [self.playBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_pause"] forState:UIControlStateSelected];
+        [self.playBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_pause"] forState:UIControlStateSelected | UIControlStateHighlighted];
+        [self.playBtn setImage:[YPhotoPickerManager imageNamedFromBundle:@"picker_unselect"] forState:UIControlStateDisabled];
         self.playBtn.contentEdgeInsets = UIEdgeInsetsMake(8, 8, 8, 8);
         [self addSubview:self.playBtn];
         self.playBtn.translatesAutoresizingMaskIntoConstraints = NO;

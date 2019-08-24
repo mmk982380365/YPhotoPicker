@@ -12,7 +12,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat:@"%@ -- %ld", self.title, self.assets.count];
+    return [NSString stringWithFormat:@"%@ -- %td", self.title, self.assets.count];
 }
 
 @end
