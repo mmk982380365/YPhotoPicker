@@ -33,7 +33,7 @@ Drop `YPhotoPicker/Picker` folder to your project and add import `CoreServices.f
 ## How To Use
 
 
-Add `NSPhotoLibraryUsageDescription` key to info.plist
+* Add `NSPhotoLibraryUsageDescription` key to info.plist
 
 * Show picker
 
@@ -67,7 +67,7 @@ picker.mediaType = YPhotoPickerMediaTypeAll;
 }
 ```
 
-* YPhotoPickerControllerInfoKey
+* Values for `YPhotoPickerControllerInfoKey`
 
 key		                                 | class              | mark
 ---	|---| ---
@@ -76,7 +76,7 @@ YPhotoPickerControllerMediaURL			| NSURL              | file path for video file
 YPhotoPickerControllerMediaType		   	| NSString           | media type of select object(`kUTTypeImage`,`kUTTypeVideo`)
 YPhotoPickerControllerImageOrientation 	| UIImageOrientation | image orientation
 
-* YPhotoPickerMediaType
+* Values for `YPhotoPickerMediaType`
 
 key									| mark
 ---	|---
