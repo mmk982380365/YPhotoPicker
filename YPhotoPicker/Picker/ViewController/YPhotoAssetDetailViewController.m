@@ -37,7 +37,7 @@
 
 @property (strong, nonatomic) dispatch_queue_t timeQueue;
 
-@property (assign, nonatomic) BOOL hasYear;
+@property (assign, nonatomic) BOOL hasHour;
 
 @property (assign, nonatomic) NSTimeInterval totalTime;
 
@@ -299,7 +299,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             //progress != 0 ? YES : NO
             [self.progressView setProgress:progress animated:progress != 0 ? YES : NO];
-            self.bottomView.timeLabel.text = [NSString stringWithFormat:@"%@/%@", [YPhotoPickerManager convertTime:current hasYear:self.hasYear], self.totalTimeString];
+            self.bottomView.timeLabel.text = [NSString stringWithFormat:@"%@/%@", [YPhotoPickerManager convertTime:current hasHour:self.hasHour], self.totalTimeString];
         });
     }];
 }
@@ -325,10 +325,10 @@
             self.player = cell.player;
             NSTimeInterval duration = CMTimeGetSeconds(self.player.currentItem.duration);
             NSTimeInterval current = CMTimeGetSeconds(cell.player.currentItem.currentTime);
-            self.hasYear = duration > 3600.0;
+            self.hasHour = duration > 3600.0;
             self.totalTime = duration;
-            self.totalTimeString = [YPhotoPickerManager convertTime:duration hasYear:self.hasYear];
-            self.bottomView.timeLabel.text = [NSString stringWithFormat:@"%@/%@", self.hasYear ? @"00:00:00" : [YPhotoPickerManager convertTime:current hasYear:self.hasYear], self.totalTimeString];
+            self.totalTimeString = [YPhotoPickerManager convertTime:duration hasHour:self.hasHour];
+            self.bottomView.timeLabel.text = [NSString stringWithFormat:@"%@/%@", self.hasHour ? @"00:00:00" : [YPhotoPickerManager convertTime:current hasHour:self.hasHour], self.totalTimeString];
             self.progressView.progress = current / duration;
             [self addObserverForTime:cell.player.currentItem];
         }

@@ -231,11 +231,11 @@
     return result;
 }
 
-+ (NSString *)convertTime:(NSTimeInterval)time hasYear:(BOOL)hasYear {
++ (NSString *)convertTime:(NSTimeInterval)time hasHour:(BOOL)hasHour {
     NSString *result = @"";
     if (time < 60) {
         //小于一分钟
-        if (hasYear) {
+        if (hasHour) {
             result = [NSString stringWithFormat:@"00:00:%02.0f", time];
         } else {
             result = [NSString stringWithFormat:@"00:%02.0f", time];
@@ -244,7 +244,7 @@
     } else if (time < 60 * 60) {
         int minute = (int)time / 60;
         int second = (int)time % 60;
-        if (hasYear) {
+        if (hasHour) {
             result = [NSString stringWithFormat:@"00:%02d:%02d", minute, second];
         } else {
             result = [NSString stringWithFormat:@"%02d:%02d", minute, second];

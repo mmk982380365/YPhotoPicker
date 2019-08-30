@@ -16,6 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nullable, nonatomic,readonly,strong) YPhotoPickerController *navigationController;
 
+/**
+ 显示提示
+
+ @param hint 提示内容
+ */
 - (void)showHint:(NSString *)hint;
 
 @end

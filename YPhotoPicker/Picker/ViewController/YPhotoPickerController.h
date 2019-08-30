@@ -81,7 +81,7 @@ didFinishPickingMediaWithInfo:(NSArray<NSDictionary<YPhotoPickerControllerInfoKe
 /**
  点击取消的回调
 
- @param picker <#picker description#>
+ @param picker picker
  */
 - (void)photoPickerControllerDidCancel:(YPhotoPickerController *)picker;
 

@@ -30,7 +30,7 @@
 
 @property (strong, nonatomic) id timeObserver;
 
-@property (assign, nonatomic) BOOL hasYear;
+@property (assign, nonatomic) BOOL hasHour;
 
 @property (assign, nonatomic) NSTimeInterval totalTime;
 
@@ -160,10 +160,10 @@
                 {
                     self.bottomView.playBtn.enabled = YES;
                     NSTimeInterval duration = CMTimeGetSeconds(self.currentItem.duration);
-                    self.hasYear = duration > 3600.0;
+                    self.hasHour = duration > 3600.0;
                     self.totalTime = duration;
-                    self.totalTimeString = [YPhotoPickerManager convertTime:duration hasYear:self.hasYear];
-                    self.bottomView.timeLabel.text = [NSString stringWithFormat:@"%@/%@", self.hasYear ? @"00:00:00" : @"00:00", self.totalTimeString];
+                    self.totalTimeString = [YPhotoPickerManager convertTime:duration hasHour:self.hasHour];
+                    self.bottomView.timeLabel.text = [NSString stringWithFormat:@"%@/%@", self.hasHour ? @"00:00:00" : @"00:00", self.totalTimeString];
                     [self addObserverForTime];
                 }
                     break;
@@ -268,7 +268,7 @@
         dispatch_async(dispatch_get_main_queue(), ^{
             //progress != 0 ? YES : NO
             [self.progressView setProgress:progress animated:progress != 0 ? YES : NO];
-            self.bottomView.timeLabel.text = [NSString stringWithFormat:@"%@/%@", [YPhotoPickerManager convertTime:current hasYear:self.hasYear], self.totalTimeString];
+            self.bottomView.timeLabel.text = [NSString stringWithFormat:@"%@/%@", [YPhotoPickerManager convertTime:current hasHour:self.hasHour], self.totalTimeString];
         });
     }];
 }
