@@ -201,6 +201,9 @@
     if ([mcName isEqualToString:@"iPhone11,4"]) return YES;// XS MAX
     if ([mcName isEqualToString:@"iPhone11,6"]) return YES;// XS MAX
     if ([mcName isEqualToString:@"iPhone11,8"]) return YES;// XR
+    if ([mcName isEqualToString:@"iPhone12,1"]) return YES;// 11
+    if ([mcName isEqualToString:@"iPhone12,3"]) return YES;// 11 Pro
+    if ([mcName isEqualToString:@"iPhone12,5"]) return YES;// 11 Pro Max
     
     return NO;
 }
